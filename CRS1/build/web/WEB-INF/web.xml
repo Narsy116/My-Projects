@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+
+    <display-name>CampusRecruitmentSystem</display-name>
+    
+    <!-- Servlet Mapping for the Default Servlet -->
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet Mappings for the CRS Application -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.example.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.example.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterStudentServlet</servlet-name>
+        <servlet-class>com.example.servlet.RegisterStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterRecruiterServlet</servlet-name>
+        <servlet-class>com.example.servlet.RegisterRecruiterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterApplicantServlet</servlet-name>
+        <servlet-class>com.example.servlet.RegisterApplicantServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminHomeServlet</servlet-name>
+        <servlet-class>com.example.servlet.AdminHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CandidateHomeServlet</servlet-name>
+        <servlet-class>com.example.servlet.CandidateHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateJobServlet</servlet-name>
+        <servlet-class>com.example.servlet.CreateJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplyJobServlet</servlet-name>
+        <servlet-class>com.example.servlet.ApplyJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentHomeServlet</servlet-name>
+        <servlet-class>com.example.servlet.StudentHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecruiterHomeServlet</servlet-name>
+        <servlet-class>com.example.servlet.RecruiterHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewApplicantsServlet</servlet-name>
+        <servlet-class>com.example.servlet.ViewApplicantsServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterStudentServlet</servlet-name>
+        <url-pattern>/register-student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterRecruiterServlet</servlet-name>
+        <url-pattern>/register-recruiter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterApplicantServlet</servlet-name>
+        <url-pattern>/register-applicant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminHomeServlet</servlet-name>
+        <url-pattern>/admin-home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CandidateHomeServlet</servlet-name>
+        <url-pattern>/candidate-home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateJobServlet</servlet-name>
+        <url-pattern>/create-job</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplyJobServlet</servlet-name>
+        <url-pattern>/apply-job</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentHomeServlet</servlet-name>
+        <url-pattern>/student-home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecruiterHomeServlet</servlet-name>
+        <url-pattern>/recruiter-home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewApplicantsServlet</servlet-name>
+        <url-pattern>/view-applicants</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

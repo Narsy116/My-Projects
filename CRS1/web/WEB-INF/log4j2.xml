@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+<Appenders>
+	
+     <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+    </Console><!--
+          
+       -->
+       
+     <RollingRandomAccessFile  name="MyRolingFile" fileName="/u01/Ubq-logs/SCM/SCM.log"
+            filePattern="/u01/Ubq-logs/SCM/SCM-%i.log" >
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Policies>
+            <SizeBasedTriggeringPolicy size="50 MB"/>
+        </Policies>
+        <DefaultRolloverStrategy max="100"/>
+    </RollingRandomAccessFile>
+   
+    <RollingFile name="MySMSRolingFile" fileName="/u01/Ubq-logs/SCM/SCM-SMSD/SCM-SMSD.log"
+            filePattern="/u01/Ubq-logs/SCM/SCM-SMSD/SCM-SMSD-%i.log" >
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Policies>
+            <SizeBasedTriggeringPolicy size="50 MB"/>
+        </Policies>
+        <DefaultRolloverStrategy max="100"/>
+    </RollingFile>
+   
+    <RollingFile name="MyMAILRolingFile" fileName="/u01/Ubq-logs/SCM/SCM-MAILD/SCM-MAILD.log"
+            filePattern="/u01/Ubq-logs/SCM/SCM-MAILD/SCM-MAILD-%i.log" > 
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/> 
+        <Policies> 
+            <SizeBasedTriggeringPolicy size="50 MB"/> 
+        </Policies> 
+        <DefaultRolloverStrategy max="100"/> 
+    </RollingFile> 
+    
+    <RollingFile name="MyDAEMONSRolingFile" fileName="/u01/Ubq-logs/SCM/SCM-DEAMON/SCM-DEAMON.log"
+            filePattern="/u01/Ubq-logs/SCM/SCM-DEAMON/SCM-DEAMON-%i.log" > 
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/> 
+        <Policies> 
+            <SizeBasedTriggeringPolicy size="50 MB"/> 
+        </Policies> 
+        <DefaultRolloverStrategy max="100"/> 
+    </RollingFile>    
+    
+    <RollingFile name="MyTFRDRolingFile" fileName="/u01/Ubq-logs/SCM/SCM-DTFR/SCM-DTFR.log"
+            filePattern="/u01/Ubq-logs/SCM/SCM-DTFR/SCM-DTFR-%i.log" > 
+        <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Policies> 
+            <SizeBasedTriggeringPolicy size="50 MB"/>
+        </Policies> 
+        <DefaultRolloverStrategy max="100"/>
+    </RollingFile> 
+    
+</Appenders>
+    
+<Loggers>
+    
+    <Logger name="smsd" level="debug">
+      <AppenderRef ref="MySMSRolingFile" level="debug" />
+    </Logger>
+    <Logger name="maild" level="debug">
+      <AppenderRef ref="MyMAILRolingFile" level="debug" />
+    </Logger>
+    <Logger name="daemons" level="debug">
+      <AppenderRef ref="MyDAEMONSRolingFile" level="debug" />
+    </Logger>
+    <Logger name="tfrd" level="debug">
+      <AppenderRef ref="MyTFRDRolingFile" level="debug" />
+    </Logger>
+
+    <Root level="debug">
+        <AppenderRef ref="Console"/> 
+<!--        <AppenderRef ref="MyRolingFile"/>-->
+    </Root>
+
+</Loggers>
+	
+</Configuration>
+
+
